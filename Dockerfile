@@ -1,4 +1,4 @@
-FROM consol/debian-xfce-vnc
+FROM consol/debian-icewm-vnc
 ENV VNC_PW=sponge
 
 USER 0
