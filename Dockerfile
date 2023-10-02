@@ -11,5 +11,8 @@ RUN chmod +x $INST_SCRIPTS/*.sh
 # Install Node.js LTS
 RUN $INST_SCRIPTS/node20.sh
 
+# Install Games
+RUN $INST_SCRIPTS/games.sh
+
 ## switch back to default user
 USER 1000
