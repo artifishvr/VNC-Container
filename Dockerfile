@@ -1,18 +1,15 @@
-FROM consol/debian-xfce-vnc
-ENV VNC_PW=sponge
+FROM lscr.io/linuxserver/webtop:ubuntu-kde 
+ENV TITLE="uwu"
 
-USER 0
+RUN apt update
 
-ADD ./assets/home $HOME/
+# add local files
+COPY /root /
 
-ADD ./assets/installers $INST_SCRIPTS/
+RUN kwriteconfig5 --file "$HOME/.config/plasma-org.kde.plasma.desktop-appletsrc" --group 'Containments' --group '1' --group 'Wallpaper' --group 'org.kde.image' --group 'General' --key 'Image' "/uwu/bg.png"
 
-RUN chmod +x $INST_SCRIPTS/*.sh
-# Install Node.js LTS
-RUN $INST_SCRIPTS/node20.sh
+RUN apt install /uwu/tbh.deb -y
 
-# Install Games
-RUN $INST_SCRIPTS/games.sh
-
-## switch back to default user
-USER 1000
+# ports and volumes
+EXPOSE 3000
+VOLUME /config

@@ -24,6 +24,11 @@ jobs:
               username: ${{github.actor}}
               password: ${{secrets.GH_TOKEN}}
 
+          - name: 'Docker Layer Caching'
+            uses: satackey/action-docker-layer-caching@v0.0.5
+            continue-on-error: true
+
+
           - name: 'Build & Publish Docker Image'
             run: |
               docker build . --tag "ghcr.io/${REPO}:latest"
