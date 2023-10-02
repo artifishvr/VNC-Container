@@ -25,7 +25,7 @@ jobs:
               password: ${{secrets.GH_TOKEN}}
 
           - name: 'Docker Layer Caching'
-            uses: satackey/action-docker-layer-caching@v0.0.5
+            uses: jpribyl/action-docker-layer-caching@v0.1.1
             continue-on-error: true
 
 
