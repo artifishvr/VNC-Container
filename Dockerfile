@@ -3,6 +3,7 @@ ENV TITLE="uwu"
 
 RUN apt update
 
+RUN mkdir /etc/kasmvnc
 # add local files
 COPY /root /
 
