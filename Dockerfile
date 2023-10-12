@@ -9,7 +9,7 @@ COPY /root /
 RUN kwriteconfig5 --file "$HOME/.config/plasma-org.kde.plasma.desktop-appletsrc" --group 'Containments' --group '1' --group 'Wallpaper' --group 'org.kde.image' --group 'General' --key 'Image' "/uwu/bg.png"
 
 RUN apt install gdebi-core -y
-RUN gdebi /uwu/tbh-1.6.0.deb -y
+RUN gdebi /uwu/tbh-1.6.0.deb --non-interactive --quiet
 
 # ports and volumes
 EXPOSE 3000
