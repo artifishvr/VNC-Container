@@ -24,11 +24,6 @@ jobs:
               username: ${{github.actor}}
               password: ${{secrets.GH_TOKEN}}
 
-          - name: 'Docker Layer Caching'
-            uses: jpribyl/action-docker-layer-caching@v0.1.1
-            continue-on-error: true
-
-
           - name: 'Build & Publish Docker Image'
             run: |
               docker build . --tag "ghcr.io/${REPO}:latest"
