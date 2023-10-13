@@ -17,8 +17,6 @@ RUN apt update && \
     /var/tmp/* \
     /tmp/*
 
-RUN gdebi /uwu/tbh-1.6.0.deb --non-interactive --quiet
-
 # ports and volumes
 EXPOSE 3000
 VOLUME /config
