@@ -6,19 +6,11 @@ desktop:
   pixel_depth: 24
 
 network:
-  protocol: http
-  interface: 0.0.0.0
-  websocket_port: auto
-  use_ipv4: true
-  use_ipv6: false
-  udp:
-    public_ip: auto
-    port: auto
-    stun_server: auto
   ssl:
-    pem_certificate: /etc/ssl/certs/ssl-cert-snakeoil.pem
-    pem_key: /etc/ssl/private/ssl-cert-snakeoil.key
-    require_ssl: true
+    pem_certificate: ${HOME}/.vnc/self.pem
+    pem_key: ${HOME}/.vnc/self.pem
+  udp:
+    public_ip: 127.0.0.1
 
 user_session:
   session_type: shared
