@@ -1,6 +1,5 @@
-## a silly experiment
+## containerized desktop environments facinate me
 [![Deploy Docker Image](https://github.com/artificialbutter/VNC-Container/actions/workflows/deploy-image.yml/badge.svg)](https://github.com/artificialbutter/VNC-Container/actions/workflows/deploy-image.yml)
-### uses linuxserver's docker-webtop as a base image, modified for my use
 
 example run command:
 
