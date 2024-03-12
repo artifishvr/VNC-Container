@@ -4,8 +4,16 @@ ENV TITLE="uwu"
 RUN kwriteconfig5 --file "$HOME/.config/plasma-org.kde.plasma.desktop-appletsrc" --group 'Containments' --group '1' --group 'Wallpaper' --group 'org.kde.image' --group 'General' --key 'Image' "/uwu/bg.png"
 
 RUN apt update && \
-    echo "**** install stuffs ****" && \
-    apt install gdebi-core -y && \
+    apt install kde-standard -y && \
+    echo "**** cleanup ****" && \
+    apt-get autoclean && \
+    rm -rf \
+    /config/.cache \
+    /var/lib/apt/lists/* \
+    /var/tmp/* \
+    /tmp/*
+
+RUN apt update && \
     apt install plasma-discover -y && \
     echo "**** cleanup ****" && \
     apt-get autoclean && \
