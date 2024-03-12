@@ -6,6 +6,7 @@ RUN kwriteconfig5 --file "$HOME/.config/plasma-org.kde.plasma.desktop-appletsrc"
 RUN apt update && \
     echo "**** install stuffs ****" && \
     apt install gdebi-core -y && \
+    apt install plasma-discover -y && \
     echo "**** cleanup ****" && \
     apt-get autoclean && \
     rm -rf \
