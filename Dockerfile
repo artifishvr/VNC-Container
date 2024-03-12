@@ -1,8 +1,8 @@
 FROM lscr.io/linuxserver/webtop:ubuntu-kde 
 ENV TITLE="uwu"
 
-RUN qdbus org.kde.plasmashell /PlasmaShell org.kde.PlasmaShell.evaluateScript '
-    var allDesktops = desktops();
+RUN qdbus org.kde.plasmashell /PlasmaShell org.kde.PlasmaShell.evaluateScript ' \
+    var allDesktops = desktops(); 
     for (i=0;i<allDesktops.length;i++) 
     {
         d = allDesktops[i];
