@@ -2,7 +2,7 @@ FROM lscr.io/linuxserver/webtop:ubuntu-kde
 ENV TITLE="uwu"
 
 RUN apt update && \
-    apt install kde-standard -y && \
+    apt install plasma-discover -y && \
     echo "**** cleanup ****" && \
     apt-get autoclean && \
     rm -rf \
@@ -12,7 +12,7 @@ RUN apt update && \
     /tmp/*
 
 RUN apt update && \
-    apt install plasma-discover -y && \
+    apt install kde-standard -y && \
     echo "**** cleanup ****" && \
     apt-get autoclean && \
     rm -rf \
