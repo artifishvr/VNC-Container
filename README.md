@@ -1,4 +1,4 @@
-## containerized desktop environments facinate me
+## containerized desktop environments fascinate me
 [![Deploy Docker Image](https://github.com/artificialbutter/VNC-Container/actions/workflows/deploy-image.yml/badge.svg)](https://github.com/artificialbutter/VNC-Container/actions/workflows/deploy-image.yml)
 
 example run command:
