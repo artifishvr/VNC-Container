@@ -1,7 +1,16 @@
 FROM lscr.io/linuxserver/webtop:ubuntu-kde 
 ENV TITLE="uwu"
 
-RUN kwriteconfig5 --file "$HOME/.config/plasma-org.kde.plasma.desktop-appletsrc" --group 'Containments' --group '1' --group 'Wallpaper' --group 'org.kde.image' --group 'General' --key 'Image' "/uwu/bg.png"
+RUN qdbus org.kde.plasmashell /PlasmaShell org.kde.PlasmaShell.evaluateScript '
+    var allDesktops = desktops();
+    for (i=0;i<allDesktops.length;i++) 
+    {
+        d = allDesktops[i];
+        d.wallpaperPlugin = "org.kde.image";
+        d.currentConfigGroup = Array("Wallpaper", "org.kde.image", "General");
+        d.writeConfig("Image", "file://uwu/bg.png")
+    }
+'
 
 RUN apt update && \
     apt install kde-standard -y && \
