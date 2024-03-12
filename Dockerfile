@@ -12,7 +12,7 @@ RUN apt update && \
     /tmp/*
 
 RUN apt update && \
-    apt install kde-standard -y && \
+    apt install ark gwenview kate kcalc okular vlc -y && \
     echo "**** cleanup ****" && \
     apt-get autoclean && \
     rm -rf \
